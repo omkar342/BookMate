@@ -1,4 +1,4 @@
-# Book Library Application
+# BookMate - Book Library Application
 
 This project is a book library application that allows users to search for books based on keywords. The application is built using APIs and is designed to provide an efficient and user-friendly solution for managing books in a library setting.
 
