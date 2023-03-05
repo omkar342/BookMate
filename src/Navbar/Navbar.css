@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Mali:wght@500&display=swap");
+
+.App-header {
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+  justify-content: space-between;
+  color: #000;
+  border-radius: 0px 0px 10px 10px;
+  box-shadow: 10px 5px 10px 10px #0e543d;
+}
+
+.App-header h1 {
+  margin: 10px 40px 10px;
+  font-size: 20px;
+  font-family: "Mali", cursive;
+}

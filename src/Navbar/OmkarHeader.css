@@ -1,0 +1,10 @@
+.omkar-header .omkar-text {
+  text-decoration: none;
+  color: #1266f1;
+}
+
+.omkar-header .omkar-text:hover {
+  color: #e54b22;
+  text-decoration: underline;
+  cursor: pointer;
+}
