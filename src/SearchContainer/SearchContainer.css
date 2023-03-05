@@ -1,0 +1,15 @@
+.search-container {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-style {
+  width: 50%;
+  height: 30px;
+  padding: 5px 5px 5px 10px;
+  font-size: 18px;
+  border-radius: 10px;
+}
