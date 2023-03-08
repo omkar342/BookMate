@@ -13,3 +13,8 @@
   font-size: 18px;
   border-radius: 10px;
 }
+
+.search-trending-subject-buttons {
+  display: flex;
+  flex-direction: row;
+}
