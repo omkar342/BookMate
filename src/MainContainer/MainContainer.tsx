@@ -10,10 +10,12 @@ function MainContainer() {
       </div>
       <div className="main-container-content">
         <div className="main-container-text-image">
-          <div className="main-container-text">
+          <div className="main-container-h3">
             <h3>
               BookMate: A Web Application for Searching Books by Keywords.
             </h3>
+          </div>
+          <div className="main-container-p">
             <p>
               BookMate is a web application that allows users to search for
               books based on keywords using APIs. It provides a simple and

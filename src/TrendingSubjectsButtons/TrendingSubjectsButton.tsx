@@ -1,14 +1,23 @@
 import React from "react";
 import "./TrendingSubjectsButton.css";
 
-interface TrendingSubjectsTitle {
+type TrendingSubjectsTitle = {
   title: string;
-}
+  handleOnClick: (
+    event: React.MouseEvent<HTMLButtonElement>,
+    searchSubject: string
+  ) => void;
+};
 
 function TrendingSubjectsButton(props: TrendingSubjectsTitle) {
   return (
     <div>
-      <button className="trending-buttton">
+      <button
+        onClick={(event) => {
+          props.handleOnClick(event, props.title);
+        }}
+        className="trending-buttton"
+      >
         <p>{props.title}</p>
       </button>
     </div>

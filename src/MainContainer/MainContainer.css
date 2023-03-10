@@ -6,8 +6,27 @@
   align-items: center;
   justify-content: center;
   background-color: #fcffb2;
-  margin: 20px 10px 10px;
+  margin: 20px 10px 20px;
   border-radius: 10px;
-  padding: 10px 30px 30px;
+  padding: 10px 10px 30px;
   font-family: "Mali", cursive;
+}
+
+.main-container h3,
+p {
+  /* margin: 0px; */
+}
+
+@media (max-width: 650px) {
+  .main-container-h3 {
+    margin: 0.9rem 0px;
+    padding: 0px 0.5rem;
+  }
+  .main-container h3 {
+    font-size: 16px;
+  }
+  .main-container-p {
+    padding: 0px 0.5rem;
+    margin: 1.8rem 0px;
+  }
 }
