@@ -28,8 +28,6 @@ const SearchContainer: React.FC = () => {
     setInputValue(event.target.value);
   };
 
-  console.log(inputValue);
-
   const handleOnClick = (searchSubject: string): void => {
     setLoading(true);
     setSearchSubject(searchSubject);
@@ -41,7 +39,6 @@ const SearchContainer: React.FC = () => {
       )
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           setSubjectData(data.works);
           setLoading(false);
         });
