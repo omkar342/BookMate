@@ -5,15 +5,36 @@ import trendingSubjects from "./TrendingSubject";
 import TableContainer from "../TableContainer/TableContainer";
 
 const SearchContainer: React.FC = () => {
+  const [searchSubject, setSearchSubject] = useState("");
+
+  const [searchedBefore, setSearchBefore] = useState(false);
+
+  const [inputValue, setInputValue] = useState("");
   const [subjectData, setSubjectData] = useState([]);
 
   const [loading, setLoading] = useState(false);
 
-  const handleOnClick = (
-    event: React.MouseEvent<HTMLButtonElement>,
-    searchSubject: string
+  const handleKeyPress = (
+    event: React.KeyboardEvent<HTMLInputElement>
   ): void => {
+    if (event.key == "Enter") {
+      handleOnClick(inputValue.toLowerCase().split(" ").join("_"));
+    }
+  };
+
+  const handleInputChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ): void => {
+    setInputValue(event.target.value);
+  };
+
+  console.log(inputValue);
+
+  const handleOnClick = (searchSubject: string): void => {
     setLoading(true);
+    setSearchSubject(searchSubject);
+    setInputValue(searchSubject.toUpperCase().split("_").join(" "));
+    setSearchBefore(true);
     try {
       const response = fetch(
         `https://openlibrary.org/subjects/${searchSubject}.json`
@@ -40,10 +61,11 @@ const SearchContainer: React.FC = () => {
       </div>
 
       <input
-        placeholder="Search by trending subjects, book title or author name"
+        value={inputValue}
+        placeholder="Search by trending topics, book title or author name"
         className="search-input"
-        // onChange={handleInputChange}
-        // onKeyPress={handleKeyPress}
+        onChange={handleInputChange}
+        onKeyPress={handleKeyPress}
       />
 
       <div className="search-trending-subject-buttons">
@@ -60,7 +82,10 @@ const SearchContainer: React.FC = () => {
       <div className="search-table">
         {loading && <h1>Loading...</h1>}
         {!loading && subjectData.length > 0 && (
-          <TableContainer subjectBooks={subjectData} />
+          <TableContainer subject={searchSubject} subjectBooks={subjectData} />
+        )}
+        {searchedBefore && !loading && subjectData.length === 0 && (
+          <h1>No Books found on searched topics</h1>
         )}
       </div>
     </div>
