@@ -14,6 +14,10 @@
   border-radius: 10px;
 }
 
+.search-table {
+  margin: 50px 30px 30px;
+}
+
 .search-trending-subject-buttons {
   display: flex;
   flex-direction: row;
@@ -36,5 +40,8 @@
 
   .search-input {
     width: 85%;
+  }
+  .search-table {
+    margin: 25px 5px 10px;
   }
 }
