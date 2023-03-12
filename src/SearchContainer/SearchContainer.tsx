@@ -77,7 +77,7 @@ const SearchContainer: React.FC = () => {
         })}
       </div>
       <div className="search-table">
-        {loading && <h1>Loading...</h1>}
+        {loading && <h1>Loading....</h1>}
         {!loading && subjectData.length > 0 && (
           <TableContainer subject={searchSubject} subjectBooks={subjectData} />
         )}
